@@ -1,15 +1,29 @@
-{% extends 'base.html' %}{% load crispy_forms_tags %}{% block task1 %}{% if request.user.is_authenticated %}
-<meta http-equiv="refresh" content="0;url={% url 'add' %}">
-{% else %}
-{% if messages %}
-{% for a in messages %}
-<div class="text-center text-info">
-<span {% if a.tags %} class="{{a.tags}}"  {% endif %}>{{a}}</span></div>
-{% endfor %}{% endif %}
-<form class="row gy-2 gx-3 align-items-center py-3 text-info" method="POST">{% csrf_token %}
-<div class="mx-auto" style="width: 500px">
-{{pk|crispy}}
-    <br><button type="submit" class="btn btn-outline-success text-light bg-dark" value="submit">Sign-up</button></div>
+{% extends 'base.html' %}{% load crispy_forms_tags %}{% block task1 %}
+<div class="container-fluid text-white border-light">
+    {% if request.user.is_authenticated %}
+    <meta http-equiv="refresh" content="0;url={% url 'add' %}">
+    {% else %}
+    {% if messages %}
+    {% for a in messages %}
+    <div class="container-fluid bg-light">
+        <div class="text-center text-info ">
+            <span {% if a.tags %} class="{{a.tags}}" {% endif %}>{{a}}</span></div>
+        {% endfor %}{% endif %}
+    </div>
+    {% if messages %}
+    {% for p in messages %}
 
-</form>{% endif %}
+    <div class="text-center text-info ">
+        {% if "error" in p.tags %}<span class="{{p.tags}}" {% endif %}>{{a}}</span></div>
+    {% endfor %}{% endif %}
+    <form class="row align-items-center py-3 mx-3 text-info" method="POST">{% csrf_token %}
+        <div class="mx-auto" style="width: 500px">
+
+            {{pk|crispy}}
+            <br>
+            <button type="submit" class="btn btn-outline-success text-light bg-dark" value="submit">Sign-up</button>
+        </div>
+
+    </form>
+</div>{% endif %}
 {% endblock %}

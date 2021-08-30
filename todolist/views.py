@@ -19,7 +19,7 @@ def register(request):
             ak.save()
             return HttpResponseRedirect('/login')
         else:
-            messages.error(request,'invalid please check your instructions')
+            messages.error(request,'Invalid please check your instructions or username already exist')
             return HttpResponseRedirect('/register')
     else:
         ak = regi()

@@ -1,4 +1,5 @@
-{% extends 'base.html' %}{% load crispy_forms_tags %}{% block task1 %}
+{% extends 'base.html' %}{% load crispy_forms_tags %}{% block task1 %}{% load static %}
+<div style="background-image: url({% static 'img/background.jpg' %}); height: 800px;">
 <div class="container">
 <form class="row gy-2 gx-3 align-items-center" method="POST">{% csrf_token %}
 <div class="mx-auto" style="width: 500px">
@@ -8,7 +9,7 @@
 
   {% for a in flask %}
 <div class="container py-5">
-<div class="mx-auto" style="width: 500px;">
+<div class="mx-auto" style="width: responsive;">
 <div class="card text-center bg-dark border-success text-light ">
   <div class="card-header border-primary">
       <b>{{a.oser}}</b>
@@ -25,7 +26,7 @@
   </div>
 </div></div></div>
 
-
+</div>
 {% endfor %}
 
 {% endblock %}

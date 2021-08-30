@@ -12,12 +12,14 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   </head>
-  <body class="text-light" style="background-image: url({% static 'img/background.jpg' %}); height: 600px;">
-  <div class =' py-5 d-flex justify-content-center' >
+  <body class="text-light" style="background-image: url({% static 'img/background.jpg' %}); height: 100px;">
+
+  <div class =' my-4 d-flex justify-content-center' >
 <div class="btn-group" role="group" aria-label="Basic example">
     {% if user.is_authenticated %}
     <a type="submit" href="{% url 'logout' %}" class="btn btn-outline-success" value="submit">Log-out</a>
-    <button type="submit" class="btn btn-outline-success" value="submit">Add Task</button>
+        <a type="submit" href="{% url 'add' %}" class="btn btn-outline-success" value="submit">Add task</a>
+
 {% else %}
     <a type="submit" href="{% url 'login' %}" class="btn btn-outline-success" value="submit">Log-in</a>
     <a type="submit" href="{% url 'register' %}" class="btn btn-outline-success" value="submit">Register</a>
