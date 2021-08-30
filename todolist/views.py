@@ -32,9 +32,6 @@ def bogin(request):
             if user is not None:
                 login(request,user)
                 return HttpResponseRedirect('/add')
-            else:
-                return HttpResponse('username is not valid')
-                return HttpResponseRedirect('/register')
     else:
 
         gm = AuthenticationForm()
