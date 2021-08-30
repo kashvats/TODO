@@ -16,9 +16,9 @@
   <div class="card-body border-success">
     <h5 class="card-title">{{a.Task}}</h5>
     <p class="card-text">{{a.details}}</p>
-    <a href="{% url 'edit' a.id %}" class="btn btn-outline-success"><ion-icon size="large" name="create-outline">
+    <a href="{% url 'edit' a.id %}" class="btn btn-outline-success"><ion-icon size="md" name="create-outline">
     </ion-icon>edit</a>
-      <a href="{% url 'delete' a.id %}" class="btn btn-outline-danger"><ion-icon size="large" name="trash-outline">Delete</ion-icon>complete</a>
+      <a href="{% url 'delete' a.id %}" class="btn btn-outline-danger"><ion-icon size="md" name="trash-outline">Delete</ion-icon>complete</a>
   </div>
   <div class="card-footer text-muted border-primary">
     {{a.date}}

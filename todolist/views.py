@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from .models import todo
+from django.contrib import messages
 
 from django.http import HttpResponseRedirect,HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
@@ -17,6 +18,9 @@ def register(request):
         if ak.is_valid():
             ak.save()
             return HttpResponseRedirect('/login')
+        else:
+            messages.error(request,'invalid please check your instructions')
+            return HttpResponseRedirect('/register')
     else:
         ak = regi()
         return render(request, 'registaration.html', {'pk': ak})
@@ -32,6 +36,9 @@ def bogin(request):
             if user is not None:
                 login(request,user)
                 return HttpResponseRedirect('/add')
+        else:
+            messages.error(request,'invalid credenitals please check your username and password carefully')
+            return HttpResponseRedirect('/login')
     else:
 
         gm = AuthenticationForm()
