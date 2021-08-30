@@ -24,7 +24,7 @@ SECRET_KEY = 'n$qvavni!l$9zz;_)5dvy+#l-4z*#fx&+bw7czo#u^97nods@*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://fodoapp.herokuapp.com/']
 
 # Application definition
 
