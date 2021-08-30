@@ -24,7 +24,7 @@ SECRET_KEY = 'n$qvavni!l$9zz;_)5dvy+#l-4z*#fx&+bw7czo#u^97nods@*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','fodoapp.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1','fodoapp.herokuapp.com']
 
 # Application definition
 
@@ -75,10 +75,16 @@ WSGI_APPLICATION = 'todoapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'todoapp',
+        'USER':'rmrjjsaokeqwcy',
+        'PASSWORD':'6a89beb5088cd4cced4110b71b550e9391cd80d314f0981e041718c864ed174d',
+        'HOST':'ec2-34-228-100-83.compute-1.amazonaws.com',
+        'PORT':'5432'
     }
 }
 
