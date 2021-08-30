@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'todoapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'todoapp',
+        'NAME': 'd4b2fjovmu65v9',
         'USER':'rmrjjsaokeqwcy',
         'PASSWORD':'6a89beb5088cd4cced4110b71b550e9391cd80d314f0981e041718c864ed174d',
         'HOST':'ec2-34-228-100-83.compute-1.amazonaws.com',
