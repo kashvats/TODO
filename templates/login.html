@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% load crispy_forms_tags %}{% block task %}{% if request.user.is_authenticated %}
+<meta http-equiv="refresh" content="0;url={% url 'add' %}">
+{% else %}
+<form class="row gy-2 gx-3 align-items-center py-5 my-5" method="POST">{% csrf_token %}
+<div class="mx-auto " style="width: 200px">
+{{rm|crispy}}
+    <br><button type="submit" class="btn btn-outline-success" value="submit">Log-in</button></div>
+
+</form>{% endif %}
+{% endblock %}

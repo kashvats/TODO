@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% load crispy_forms_tags %}{% block task1 %}
+<div class="container border my-2 py-2 col-3 rounded">
+    <h2 class="text-center my-2 py-3">Edit your Task</h2></div>
+<div class="container border my-2 py-3 col-6 rounded">
+<form class="row gy-2 gx-3 align-items-center" method="POST">{% csrf_token %}
+<div class="mx-auto" style="width: 200px">
+{{lopo|crispy}}
+    <br><button type="submit" class="btn btn-outline-success" value="submit">update</button></div>
+
+</form></div>
+{% endblock %}
