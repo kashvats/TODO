@@ -1,5 +1,4 @@
 {% extends 'base.html' %}{% load crispy_forms_tags %}{% block task1 %}{% load static %}
-<div style="background-image: url({% static 'img/background.jpg' %}); height: 800px;">
 <div class="container">
 <form class="row gy-2 gx-3 align-items-center" method="POST">{% csrf_token %}
 <div class="mx-auto" style="width: 500px">
@@ -26,7 +25,6 @@
   </div>
 </div></div></div>
 
-</div>
 {% endfor %}
 
 {% endblock %}
